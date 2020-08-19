@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Wonderful Jateng</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="_">-</string>
+    <string name="wisata">Wisata</string>
+    <string name="umkm">UMKM</string>
+    <string name="profile">Profile</string>
+    <string name="penginapan">Penginapan</string>
+    <string name="budaya">Budaya</string>
+    <string name="kuliner">Kuliner</string>
+    <string name="url1">https://ik.imagekit.io/tvlk/blog/2020/01/shutterstock_784389145.jpg</string>
+    <string name="read_more">Read More</string>
+    <string name="welcome_to_wonderful_jateng">Welcome to Wonderful Jateng.</string>
+</resources>

@@ -1,0 +1,2 @@
+rootProject.name='Wonderful Jateng'
+include ':app'

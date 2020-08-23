@@ -21,37 +21,37 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        firebaseAuth = FirebaseAuth.getInstance();
-        mAuthListener = new FirebaseAuth.AuthStateListener(){
-            @Override
-            public  void  onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth){
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if(user!=null){
-//                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-//                    startActivity(intent);
-//                    finish();
-                    isLogin = true;
-                }else{
+//        firebaseAuth = FirebaseAuth.getInstance();
+//        mAuthListener = new FirebaseAuth.AuthStateListener(){
+//            @Override
+//            public  void  onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth){
+//                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//                if(user!=null){
+////                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+////                    startActivity(intent);
+////                    finish();
+//                    isLogin = true;
+//                }else{
                     isLogin = false;
-                }
-            }
-        };
+//                }
+//            }
+//        };
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(isLogin) {
-                    //setelah loading maka akan langsung berpindah ke home activity
-                    Intent home = new Intent(SplashActivity.this, MainActivity.class);
-                    startActivity(home);
-                    finish();
-                }else{
+//                if(isLogin) {
+//                    //setelah loading maka akan langsung berpindah ke home activity
+//                    Intent home = new Intent(SplashActivity.this, MainActivity.class);
+//                    startActivity(home);
+//                    finish();
+//                }else{
 
                     //setelah loading maka akan langsung berpindah ke login activity
                     Intent home = new Intent(SplashActivity.this, LoginActivity.class);
                     startActivity(home);
                     finish();
-                }
+//                }
             }
         },waktu_loading);
     }

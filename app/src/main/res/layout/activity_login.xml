@@ -11,11 +11,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="vertical"/>
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/bg_white"
@@ -27,7 +24,7 @@
             android:layout_marginTop="120dp"
             android:layout_marginBottom="20dp"
             android:gravity="center_horizontal"
-            android:text="Selamat Datang di Wonderful Jateng"
+            android:text="@string/selamat_datang_di_wonderful_jateng"
             android:textSize="20sp"
             android:textStyle="bold"/>
     <EditText
@@ -108,14 +105,15 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Belum Punya Akun? Daftar Disini"
+        android:text="@string/belum_punya_akun_daftar_disini"
         android:textSize="20sp"
         android:gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:clickable="true"
         android:onClick="onClick"
-        android:textColor="@color/colorPrimary"/>
+        android:textColor="@color/colorPrimary"
+        android:focusable="true" />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="210dp"
@@ -125,5 +123,6 @@
         app:layout_constraintBottom_toTopOf="@+id/edt_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        android:contentDescription="@string/_" />
 </LinearLayout>

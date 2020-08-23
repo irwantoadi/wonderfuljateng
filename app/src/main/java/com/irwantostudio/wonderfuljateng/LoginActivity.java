@@ -20,13 +20,13 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText edtEmail, edtPassword;
     private Button btnLogin, btnRegister;
-    private FirebaseAuth auth;
+//    private FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initView();
-        login();
+//        login();
     }
 
     private void initView() {
@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         edtPassword = findViewById(R.id.edt_password);
         btnLogin = findViewById(R.id.btn_login);
         btnRegister = findViewById(R.id.btn_register);
-        auth = FirebaseAuth.getInstance();
+//        auth = FirebaseAuth.getInstance();
     }
 
     private void login() {
@@ -68,25 +68,25 @@ public class LoginActivity extends AppCompatActivity {
                 else if (passwordUser.length() < 6) {
                     edtPassword.setError("Password minimal terdiri dari 6 karakter");
                 } else {
-                    auth.signInWithEmailAndPassword(emailUser, passwordUser)
-                            .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    // ketika gagal locin maka akan do something
-                                    if (!task.isSuccessful()) {
-                                        Toast.makeText(LoginActivity.this,
-                                                "Gagal login karena " + task.getException().getMessage()
-                                                , Toast.LENGTH_LONG).show();
-                                    } else {
-                                        Bundle bundle = new Bundle();
-                                        bundle.putString("email", emailUser);
-                                        bundle.putString("pass", passwordUser);
-                                        startActivity(new Intent(LoginActivity.this, MainActivity.class)
-                                                .putExtra("emailpass", bundle));
-                                        finish();
-                                    }
-                                }
-                            });
+//                    auth.signInWithEmailAndPassword(emailUser, passwordUser)
+//                            .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+//                                @Override
+//                                public void onComplete(@NonNull Task<AuthResult> task) {
+//                                    // ketika gagal locin maka akan do something
+//                                    if (!task.isSuccessful()) {
+//                                        Toast.makeText(LoginActivity.this,
+//                                                "Gagal login karena " + task.getException().getMessage()
+//                                                , Toast.LENGTH_LONG).show();
+//                                    } else {
+//                                        Bundle bundle = new Bundle();
+//                                        bundle.putString("email", emailUser);
+//                                        bundle.putString("pass", passwordUser);
+//                                        startActivity(new Intent(LoginActivity.this, MainActivity.class)
+//                                                .putExtra("emailpass", bundle));
+//                                        finish();
+//                                    }
+//                                }
+//                            });
                 }
             }
         });

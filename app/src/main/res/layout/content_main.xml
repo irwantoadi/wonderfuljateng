@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/birumuda"
+    android:background="#fff"
     tools:context=".MainActivity">
 <ScrollView
     android:layout_width="match_parent"
@@ -116,27 +116,40 @@
                 android:text="@string/umkm"
                 android:layout_marginTop="-10dp"
                 android:gravity="center_horizontal"/>
-            <TextView
+            <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="25sp"
-                android:gravity="center_horizontal"/>
-            <ImageButton
-                android:id="@+id/btn_profile"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                app:srcCompat="@drawable/btn_profile"
                 android:layout_weight="0.5"
                 android:adjustViewBounds="true"
                 android:padding="10dp"
                 android:background="@null"
                 android:scaleType="fitCenter"
                 android:contentDescription="@string/_" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btn_kuliner"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="0.5"
+                android:adjustViewBounds="true"
+                android:padding="10dp"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/btn_kuliner"
+                tools:ignore="NestedWeights"
+                android:contentDescription="@string/_" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/profile"
+                android:text="@string/kuliner"
                 android:layout_marginTop="-10dp"
                 android:gravity="center_horizontal"/>
             <TextView
@@ -146,15 +159,24 @@
                 android:textSize="25sp"
                 android:gravity="center_horizontal"/>
             <ImageButton
-                android:id="@+id/btn_video"
+                android:id="@+id/btn_budaya"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="150dp"
+                android:layout_marginTop="0dp"
                 android:layout_weight="0.5"
                 android:adjustViewBounds="true"
                 android:padding="10dp"
                 android:background="@null"
                 android:scaleType="fitCenter"
+                app:srcCompat="@drawable/btn_budaya"
+                tools:ignore="NestedWeights"
                 android:contentDescription="@string/_" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/budaya"
+                android:layout_marginTop="-10dp"
+                android:gravity="center_horizontal"/>
             <ImageButton
                 android:id="@+id/btn_glosarium"
                 android:layout_width="match_parent"
@@ -199,68 +221,23 @@
                 android:textSize="25sp"
                 android:gravity="center_horizontal"/>
             <ImageButton
-                android:id="@+id/btn_budaya"
+                android:id="@+id/btn_profile"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_marginTop="0dp"
+                app:srcCompat="@drawable/btn_profile"
                 android:layout_weight="0.5"
                 android:adjustViewBounds="true"
                 android:padding="10dp"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/btn_budaya"
-                tools:ignore="NestedWeights"
                 android:contentDescription="@string/_" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/budaya"
+                android:text="@string/profile"
                 android:layout_marginTop="-10dp"
                 android:gravity="center_horizontal"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="25sp"
-                android:gravity="center_horizontal"/>
             <ImageButton
-                android:id="@+id/btn_kuliner"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginTop="0dp"
-                android:layout_weight="0.5"
-                android:adjustViewBounds="true"
-                android:padding="10dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/btn_kuliner"
-                tools:ignore="NestedWeights"
-                android:contentDescription="@string/_" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/kuliner"
-                android:layout_marginTop="-10dp"
-                android:gravity="center_horizontal"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="25sp"
-                android:gravity="center_horizontal"/>
-            <ImageButton
-                android:id="@+id/btn_latihan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:layout_weight="0.5"
-                android:adjustViewBounds="true"
-                android:padding="10dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                tools:ignore="NestedWeights"
-                android:contentDescription="@string/_" />
-           <ImageButton
                 android:id="@+id/btn_profil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -271,6 +248,27 @@
                 android:scaleType="fitCenter"
                 android:contentDescription="@string/_" />
         </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/birumuda"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/profile"
+            android:layout_marginTop="-10dp"
+            android:gravity="center_horizontal"/>
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:adjustViewBounds="true"
+            android:padding="10dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/_" />
     </LinearLayout>
     </LinearLayout>
 </ScrollView>

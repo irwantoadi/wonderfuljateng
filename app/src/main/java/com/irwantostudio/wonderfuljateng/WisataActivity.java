@@ -59,7 +59,7 @@ public class WisataActivity extends AppCompatActivity {
 
             //getting the name from the json object and putting it inside string array
             nama_wisata[i] = obj.getString("nama_wisata");
-            deskripsi_wisata[i] = obj.getString("ket_wisata");
+            deskripsi_wisata[i] = obj.getString("ket_wisata").substring(0, 48);
 
             item = new HashMap<String,String>();
             item.put( "line1", obj.getString("nama_wisata"));

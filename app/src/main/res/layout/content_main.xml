@@ -36,36 +36,14 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:orientation="horizontal">
-
-<!--        <SearchView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:queryHint="Cari kos idamanmu, yuk!"-->
-<!--            android:iconifiedByDefault="false"-->
-<!--            android:background="#f0f0f0" />-->
-<!--    <Button-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@drawable/baseline_search_white_18dp"-->
-<!--        android:layout_marginLeft="-50dp"-->
-<!--        android:backgroundTint="#fff"/>-->
     </LinearLayout>
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Cari Berdasarkan :"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:layout_marginRight="20dp"-->
-<!--        android:layout_marginTop="10dp"/>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
+        android:padding="10dp"
+        android:layout_margin="16dp"
         android:orientation="horizontal"
-        android:background="#fff"
+        android:background="@drawable/bg_birumuda"
         android:baselineAligned="false">
 
         <LinearLayout
@@ -92,13 +70,15 @@
                 android:layout_height="wrap_content"
                 android:text="@string/wisata"
                 android:layout_marginTop="-10dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
                 android:gravity="center_horizontal"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="25sp"
-                android:gravity="center_horizontal"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="25sp"-->
+<!--                android:gravity="center_horizontal"/>-->
             <ImageButton
                 android:id="@+id/btn_umkm"
                 android:layout_width="match_parent"
@@ -114,17 +94,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/umkm"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
                 android:layout_marginTop="-10dp"
                 android:gravity="center_horizontal"/>
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:adjustViewBounds="true"
-                android:padding="10dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:contentDescription="@string/_" />
+<!--            <ImageButton-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="0.5"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:padding="10dp"-->
+<!--                android:background="@null"-->
+<!--                android:scaleType="fitCenter"-->
+<!--                android:contentDescription="@string/_" />-->
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -150,43 +132,48 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/kuliner"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
                 android:layout_marginTop="-10dp"
                 android:gravity="center_horizontal"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="25sp"
-                android:gravity="center_horizontal"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="25sp"-->
+<!--                android:gravity="center_horizontal"/>-->
+
             <ImageButton
                 android:id="@+id/btn_budaya"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="154dp"
                 android:layout_marginTop="0dp"
                 android:layout_weight="0.5"
                 android:adjustViewBounds="true"
-                android:padding="10dp"
                 android:background="@null"
+                android:contentDescription="@string/_"
+                android:padding="10dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/btn_budaya"
-                tools:ignore="NestedWeights"
-                android:contentDescription="@string/_" />
+                tools:ignore="NestedWeights" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/budaya"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
                 android:layout_marginTop="-10dp"
                 android:gravity="center_horizontal"/>
-            <ImageButton
-                android:id="@+id/btn_glosarium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:adjustViewBounds="true"
-                android:padding="10dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:contentDescription="@string/_" />
+<!--            <ImageButton-->
+<!--                android:id="@+id/btn_glosarium"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="0.5"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:padding="10dp"-->
+<!--                android:background="@null"-->
+<!--                android:scaleType="fitCenter"-->
+<!--                android:contentDescription="@string/_" />-->
         </LinearLayout>
 
         <LinearLayout
@@ -212,14 +199,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/penginapan"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
                 android:layout_marginTop="-10dp"
                 android:gravity="center_horizontal"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="25sp"
-                android:gravity="center_horizontal"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="25sp"-->
+<!--                android:gravity="center_horizontal"/>-->
             <ImageButton
                 android:id="@+id/btn_profile"
                 android:layout_width="match_parent"
@@ -235,18 +224,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/profile"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
                 android:layout_marginTop="-10dp"
                 android:gravity="center_horizontal"/>
-            <ImageButton
-                android:id="@+id/btn_profil"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:adjustViewBounds="true"
-                android:padding="10dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:contentDescription="@string/_" />
+<!--            <ImageButton-->
+<!--                android:id="@+id/btn_profil"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="0.5"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:padding="10dp"-->
+<!--                android:background="@null"-->
+<!--                android:scaleType="fitCenter"-->
+<!--                android:contentDescription="@string/_" />-->
         </LinearLayout>
     </LinearLayout>
     <LinearLayout

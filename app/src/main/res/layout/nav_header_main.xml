@@ -15,6 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:contentDescription="-"
+        android:layout_marginTop="16dp"
         app:srcCompat="@drawable/icon_app"
         tools:ignore="HardcodedText" />
 

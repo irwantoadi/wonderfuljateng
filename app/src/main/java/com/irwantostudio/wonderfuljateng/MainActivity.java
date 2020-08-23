@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private FirebaseAuth auth;
+//    private FirebaseAuth auth;
     ImageButton btn_kuliner, btn_penginapan, btn_umkm, btn_wisata, btn_profile, btn_budaya;
 
     DrawerLayout drawerLayout;
@@ -37,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Bundle bundle = getIntent().getBundleExtra("emailpass");
-        String email = bundle.getString("email");
-        String password = bundle.getString("pass");
-
-        auth = FirebaseAuth.getInstance();
+//        Bundle bundle = getIntent().getBundleExtra("emailpass");
+//        String email = bundle.getString("email");
+//        String password = bundle.getString("pass");
+//
+//        auth = FirebaseAuth.getInstance();
         Toolbar toolbar;
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         btn_kuliner = findViewById(R.id.btn_kuliner);
         btn_penginapan = findViewById(R.id.btn_penginapan);
         btn_budaya = findViewById(R.id.btn_budaya);
-        btn_profile = findViewById(R.id.btn_profil);
+        btn_profile = findViewById(R.id.btn_profile);
         btn_umkm = findViewById(R.id.btn_umkm);
 
         btn_wisata.setOnClickListener(new View.OnClickListener() {

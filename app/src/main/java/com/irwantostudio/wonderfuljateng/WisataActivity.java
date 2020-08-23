@@ -63,7 +63,7 @@ public class WisataActivity extends AppCompatActivity {
 
             item = new HashMap<String,String>();
             item.put( "line1", obj.getString("nama_wisata"));
-            item.put( "line2", obj.getString("ket_wisata"));
+            item.put( "line2", obj.getString("ket_wisata").substring(0, 40)+"....");
             wordList.add( item );
         }
 

@@ -5,4 +5,6 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="birumuda">#D5F0FF</color>
     <color name="white">#fff</color>
+
+    <color name="biruSplash">#1AA6F5</color>
 </resources>

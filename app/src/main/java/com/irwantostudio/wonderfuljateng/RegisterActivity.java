@@ -83,4 +83,8 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegister = findViewById(R.id.btn_register);
         auth = FirebaseAuth.getInstance();
     }
+
+    public void onClick(View view) {
+        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+    }
 }

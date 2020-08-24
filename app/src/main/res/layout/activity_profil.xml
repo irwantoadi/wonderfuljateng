@@ -215,4 +215,16 @@
                 android:layout_height="100dp"
                 android:orientation="vertical"/>
         </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-8539740865663154/6104442061"
+        android:layout_marginBottom="-60dp"
+        android:layout_marginTop="-60dp">
+    </com.google.android.gms.ads.AdView>
 </LinearLayout>

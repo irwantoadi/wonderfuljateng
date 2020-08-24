@@ -18,16 +18,21 @@
         <activity android:name=".ShowWisataActivity"
             android:parentActivityName=".WisataActivity"/>
         <activity android:name=".KabupatenActivity"
+            android:label="Daftar Kabupaten"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".ProfilActivity"
+            android:label="Profil Saya"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".KulinerActivity"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".BudayaActivity"
+            android:label="Budaya"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".HotelActivity"
+            android:label="Penginapan"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".UmkmActivity"
+            android:label="UMKM"
             android:parentActivityName=".MainActivity"/>
 
         <meta-data

@@ -86,10 +86,42 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn_kuliner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent home = new Intent(MainActivity.this, KulinerActivity.class);
+                startActivity(home);
+            }
+        });
+
+        btn_penginapan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent home = new Intent(MainActivity.this, HotelActivity.class);
+                startActivity(home);
+            }
+        });
+
+        btn_budaya.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent home = new Intent(MainActivity.this, BudayaActivity.class);
+                startActivity(home);
+            }
+        });
+
         btn_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent home = new Intent(MainActivity.this, ProfilActivity.class);
+                startActivity(home);
+            }
+        });
+
+        btn_umkm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent home = new Intent(MainActivity.this, UmkmActivity.class);
                 startActivity(home);
             }
         });

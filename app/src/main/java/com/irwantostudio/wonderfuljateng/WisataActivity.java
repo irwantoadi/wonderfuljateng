@@ -133,6 +133,7 @@ public class WisataActivity extends AppCompatActivity {
 //        listView.setAdapter(arrayAdapter);
 
         listView.setAdapter(arrayAdapter1);
+        listView.setDivider(null);
 
     }
 

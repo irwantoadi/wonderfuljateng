@@ -240,27 +240,27 @@
 <!--                android:contentDescription="@string/_" />-->
         </LinearLayout>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/birumuda"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/profile"
-            android:layout_marginTop="-10dp"
-            android:gravity="center_horizontal"/>
-        <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:adjustViewBounds="true"
-            android:padding="10dp"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:contentDescription="@string/_" />
-    </LinearLayout>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/birumuda"-->
+<!--        android:orientation="vertical">-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/profile"-->
+<!--            android:layout_marginTop="-10dp"-->
+<!--            android:gravity="center_horizontal"/>-->
+<!--        <ImageButton-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="0.5"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:padding="10dp"-->
+<!--            android:background="@null"-->
+<!--            android:scaleType="fitCenter"-->
+<!--            android:contentDescription="@string/_" />-->
+<!--    </LinearLayout>-->
     </LinearLayout>
 </ScrollView>
 

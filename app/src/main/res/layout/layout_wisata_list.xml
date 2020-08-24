@@ -11,6 +11,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:paddingBottom="60dp"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideOverlay"
         tools:listitem="@layout/list_wisata_row"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

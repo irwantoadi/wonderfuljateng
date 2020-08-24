@@ -11,6 +11,9 @@
         android:roundIcon="@drawable/icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8539740865663154~4032155957"/>
         <activity android:name=".WisataActivity"
             android:parentActivityName=".MainActivity"
             android:label="Wisata"/>

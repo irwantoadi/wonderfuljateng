@@ -11,12 +11,24 @@
         android:roundIcon="@drawable/icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ShowKabupatenActivity"></activity>
+        <activity android:name=".ShowKulinerActivity" />
+        <activity android:name=".ShowWisataActivity" />
+        <activity android:name=".KabupatenActivity" />
+        <activity android:name=".ProfilActivity" />
+        <activity android:name=".KulinerActivity" />
+        <activity android:name=".BudayaActivity" />
+        <activity android:name=".HotelActivity" />
+        <activity android:name=".UmkmActivity" />
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-8539740865663154~4032155957"/>
-        <activity android:name=".WisataActivity"
-            android:parentActivityName=".MainActivity"
-            android:label="Wisata"/>
+            android:value="ca-app-pub-8539740865663154~4032155957" />
+
+        <activity
+            android:name=".WisataActivity"
+            android:label="Wisata"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">

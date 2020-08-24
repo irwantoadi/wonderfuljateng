@@ -86,6 +86,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent home = new Intent(MainActivity.this, ProfilActivity.class);
+                startActivity(home);
+            }
+        });
+
+        //script admob
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {

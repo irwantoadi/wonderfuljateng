@@ -11,15 +11,24 @@
         android:roundIcon="@drawable/icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShowKabupatenActivity"></activity>
-        <activity android:name=".ShowKulinerActivity" />
-        <activity android:name=".ShowWisataActivity" />
-        <activity android:name=".KabupatenActivity" />
-        <activity android:name=".ProfilActivity" />
-        <activity android:name=".KulinerActivity" />
-        <activity android:name=".BudayaActivity" />
-        <activity android:name=".HotelActivity" />
-        <activity android:name=".UmkmActivity" />
+        <activity android:name=".ShowKabupatenActivity"
+            android:parentActivityName=".KabupatenActivity"/>
+        <activity android:name=".ShowKulinerActivity"
+            android:parentActivityName=".KulinerActivity"/>
+        <activity android:name=".ShowWisataActivity"
+            android:parentActivityName=".WisataActivity"/>
+        <activity android:name=".KabupatenActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".ProfilActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".KulinerActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".BudayaActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".HotelActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".UmkmActivity"
+            android:parentActivityName=".MainActivity"/>
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"

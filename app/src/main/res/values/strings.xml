@@ -18,7 +18,6 @@
     <string name="read_more">Read More</string>
     <string name="welcome_to_wonderful_jateng">Welcome to Wonderful Jateng.</string>
     <string name="daftar">Daftar</string>
-    <string name="nama_lengkap">Nama Lengkap</string>
     <string name="alamat">Alamat</string>
     <string name="sudah_punya_akun_login_disini">Sudah Punya Akun? Login Disini</string>
     <string name="nomor_hp">Nomor HP</string>
@@ -26,4 +25,6 @@
     <string name="register_form">Register Form</string>
     <string name="selamat_datang_di_wonderful_jateng">Selamat Datang di Wonderful Jateng</string>
     <string name="belum_punya_akun_daftar_disini">Belum Punya Akun? Daftar Disini</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="nama">Nama</string>
 </resources>

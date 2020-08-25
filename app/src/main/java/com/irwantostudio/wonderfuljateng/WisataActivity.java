@@ -2,8 +2,11 @@ package com.irwantostudio.wonderfuljateng;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -135,8 +138,16 @@ public class WisataActivity extends AppCompatActivity {
 
         listView.setAdapter(arrayAdapter1);
         listView.setDivider(null);
-
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getApplicationContext(),ShowWisataActivity.class);
+                intent.putExtra("name","wisata");
+                startActivity(intent);
+            }
+        });
     }
+
 
     //this method is actually fetching the json string
     private void getJSON(final String urlWebService) {

@@ -24,6 +24,7 @@
             android:label="Profil Saya"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".KulinerActivity"
+            android:label="Kuliner"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".BudayaActivity"
             android:label="Budaya"
@@ -47,8 +48,6 @@
             android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

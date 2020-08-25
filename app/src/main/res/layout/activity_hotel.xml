@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_splash"
+    android:background="@drawable/bg_birumuda"
     android:orientation="vertical"
-    android:gravity="center"
     tools:context=".RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="60dp"
-        android:gravity="center"
+        android:gravity="top"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,119 +21,122 @@
             android:layout_marginRight="16dp"
             android:orientation="vertical">
 
-            <ImageView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pilih_salah_satu_layanan_penginapan"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:background="@drawable/rounded"
-                android:src="@drawable/pegipegi"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="90dp"/>
-            <ImageView
+                card_view:cardBackgroundColor="#f0f0f0"
+                card_view:cardCornerRadius="16dp"
+                card_view:cardPreventCornerOverlap="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/rounded"
+                        android:src="@drawable/pegipegi"
+                        android:contentDescription="@string/_" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.7"
+                        android:padding="16dp"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:text="pegipegi"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/lokasi_wisata"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="https://www.pegipegi.com/"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view1"
+                android:layout_centerHorizontal="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:background="@drawable/rounded"
-                android:src="@drawable/traveloka"/>
-
-
-
-
-            <!--                <EditText-->
-            <!--                    android:id="@+id/edt_nama_register"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_margin="8dp"-->
-            <!--                    android:layout_marginBottom="8dp"-->
-            <!--                    android:background="@drawable/bg_abu"-->
-            <!--                    android:hint="@string/nama_lengkap"-->
-            <!--                    android:importantForAutofill="no"-->
-            <!--                    android:padding="16dp"-->
-            <!--                    android:inputType="text" />-->
-
-            <!--                <EditText-->
-            <!--                    android:id="@+id/edt_alamat_register"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_margin="8dp"-->
-            <!--                    android:layout_marginBottom="8dp"-->
-            <!--                    android:background="@drawable/bg_abu"-->
-            <!--                    android:hint="@string/alamat"-->
-            <!--                    android:importantForAutofill="no"-->
-            <!--                    android:padding="16dp"-->
-            <!--                    android:inputType="text" />-->
-
-            <!--                <EditText-->
-            <!--                    android:id="@+id/edt_nohp_register"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_margin="8dp"-->
-            <!--                    android:layout_marginBottom="8dp"-->
-            <!--                    android:background="@drawable/bg_abu"-->
-            <!--                    android:hint="@string/nomor_hp"-->
-            <!--                    android:importantForAutofill="no"-->
-            <!--                    android:padding="16dp"-->
-            <!--                    android:inputType="text" />-->
-
-            <!--                <EditText-->
-            <!--                    android:id="@+id/edt_email_register"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_margin="8dp"-->
-            <!--                    android:layout_marginBottom="8dp"-->
-            <!--                    android:background="@drawable/bg_abu"-->
-            <!--                    android:hint="@string/email"-->
-            <!--                    android:importantForAutofill="no"-->
-            <!--                    android:inputType="textEmailAddress"-->
-            <!--                    android:padding="16dp" />-->
-
-            <!--                <EditText-->
-            <!--                    android:id="@+id/edt_password_register"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_margin="8dp"-->
-            <!--                    android:background="@drawable/bg_abu"-->
-            <!--                    android:hint="@string/password"-->
-            <!--                    android:inputType="textPassword"-->
-            <!--                    android:padding="16dp"-->
-            <!--                    android:autofillHints="" />-->
-
-            <!--                <Button-->
-            <!--                    android:id="@+id/btn_register"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_margin="16dp"-->
-            <!--                    android:layout_marginTop="8dp"-->
-            <!--                    android:background="@drawable/bg_blue_primary"-->
-            <!--                    android:padding="16dp"-->
-            <!--                    android:text="@string/register"-->
-            <!--                    android:textColor="@android:color/white" />-->
+                android:layout_marginTop="16dp"
+                card_view:cardBackgroundColor="#f0f0f0"
+                card_view:cardCornerRadius="16dp"
+                card_view:cardPreventCornerOverlap="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/rounded"
+                        android:src="@drawable/traveloka"
+                        android:contentDescription="@string/_" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.7"
+                        android:padding="16dp"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/nama_kuliner"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:text="traveloka"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/https_www_traveloka_com_ms_my_hotel"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
-
-        <!--            <TextView-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_marginTop="20dp"-->
-        <!--                android:layout_marginBottom="50dp"-->
-        <!--                android:clickable="true"-->
-        <!--                android:gravity="center_horizontal"-->
-        <!--                android:onClick="onClick"-->
-        <!--                android:text="@string/sudah_punya_akun_login_disini"-->
-        <!--                android:textColor="@color/colorPrimary"-->
-        <!--                android:textSize="20sp"-->
-        <!--                android:focusable="true" />-->
-
-<!--        <ImageView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="200dp"-->
-<!--            android:layout_marginTop="-460dp"-->
-<!--            android:adjustViewBounds="true"-->
-<!--            android:src="@drawable/user" />-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"/>
@@ -144,7 +147,6 @@
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-8539740865663154/6104442061"
         android:layout_marginBottom="-60dp"

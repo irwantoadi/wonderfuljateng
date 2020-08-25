@@ -115,6 +115,7 @@ public class KulinerActivity extends AppCompatActivity {
             item = new HashMap<String,String>();
             item.put( "line1", obj.getString("nama_kuliner"));
             item.put( "line2", obj.getString("ket_kuliner").substring(0, 40)+"....");
+            item.put( "line3", obj.getString("nama_kabupaten"));
             wordList.add( item );
         }
 
@@ -122,8 +123,8 @@ public class KulinerActivity extends AppCompatActivity {
 //        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.list_wisata_row, R.id.nama_wisata, nama_wisata);
         SimpleAdapter arrayAdapter1 = new SimpleAdapter(this, wordList,
                 R.layout.list_kuliner_row,
-                new String[] { "line1","line2" },
-                new int[] {R.id.nama_kuliner, R.id.deskripsi_kuliner});
+                new String[] { "line1","line2", "line3"},
+                new int[] {R.id.nama_kuliner, R.id.deskripsi_kuliner, R.id.lokasi_kuliner});
 
         //attaching adapter to listview
 //        listView.setAdapter(arrayAdapter);

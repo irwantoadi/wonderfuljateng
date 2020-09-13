@@ -7,14 +7,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.auth.FirebaseUser;
 
 public class SplashActivity extends AppCompatActivity {
     private int waktu_loading=4000;
-    private FirebaseAuth firebaseAuth;
+//    private FirebaseAuth firebaseAuth;
     private boolean isLogin;
-    FirebaseAuth.AuthStateListener mAuthListener;
+//    FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

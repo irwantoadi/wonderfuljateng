@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="16dp"
     android:layout_width="match_parent"
@@ -9,7 +9,6 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
-        android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         card_view:cardBackgroundColor="#fff"
@@ -39,6 +38,7 @@
 <!--                android:text="Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it."-->
 <!--                />-->
             <ImageView
+                android:id="@+id/id_image_wisata"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -46,6 +46,13 @@
                 android:scaleType="centerCrop"
                 android:background="@drawable/rounded"
                 android:src="@drawable/wisata1"/>
+<!--            <com.denzcoskun.imageslider.ImageSlider-->
+<!--                android:id="@+id/image_slider"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="250dp"-->
+<!--                app:iss_auto_cycle="true"-->
+<!--                app:iss_period="1000"-->
+<!--                app:iss_delay="0"/>-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

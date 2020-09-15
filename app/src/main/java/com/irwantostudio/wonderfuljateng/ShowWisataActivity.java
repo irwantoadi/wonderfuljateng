@@ -2,9 +2,17 @@ package com.irwantostudio.wonderfuljateng;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
@@ -17,25 +25,47 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class ShowWisataActivity extends AppCompatActivity {
 
     private AdView mAdView;
     private ImageView imageView;
+    private HashMap<String, String> item;
+    private TextView nama_wisata, deskripsi_wisata, lokasi_wisata;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_wisata);
-        setTitle("Curug Pitu Banjarnegara");
+
+        nama_wisata = findViewById(R.id.nama_wisata);
+        deskripsi_wisata = findViewById(R.id.deskripsi_wisata);
+        lokasi_wisata = findViewById(R.id.lokasi_wisata);
+
 
 //        imageView = findViewById(R.id.id_show_wisata);
 //        Picasso.get().load("https://sipetik.com/server/select_image_wisata.php?id=7").into(imageView);
 
+        Intent intent= getIntent();
+        Bundle data = intent.getExtras();
+        String id_wisata =(String) data.get("id_wisata");
+        getJSON("https://sipetik.com/server/select_wisata.php?id="+id_wisata);
 
         ImageSlider imageSlider = findViewById(R.id.image_show_wisata_slider);
         List<SlideModel> slideModels = new ArrayList<>();
+
+//        Toast.makeText(ShowWisataActivity.this, id_wisata, Toast.LENGTH_LONG).show();
+
         slideModels.add(new SlideModel(getString(R.string.url1), ScaleTypes.FIT));
         slideModels.add(new SlideModel("https://blog.airyrooms.com/wp-content/uploads/2018/07/800X500-3.png", ScaleTypes.FIT));
         slideModels.add(new SlideModel("https://tempatwisataseru.com/wp-content/uploads/2015/11/Dieng.jpg", ScaleTypes.FIT));
@@ -89,5 +119,98 @@ public class ShowWisataActivity extends AppCompatActivity {
                 // to the app after tapping on an ad.
             }
         });
+    }
+
+    //this method is actually fetching the json string
+    private void getJSON(final String urlWebService) {
+        /*
+         * As fetching the json string is a network operation
+         * And we cannot perform a network operation in main thread
+         * so we need an AsyncTask
+         * The constrains defined here are
+         * Void -> We are not passing anything
+         * Void -> Nothing at progress update as well
+         * String -> After completion it should return a string and it will be the json string
+         * */
+        class GetJSON extends AsyncTask<Void, Void, String> {
+
+            //this method will be called before execution
+            //you can display a progress bar or something
+            //so that user can understand that he should wait
+            //as network operation may take some time
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+            //this method will be called after execution
+            //so here we are displaying a toast with the json string
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+//                Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+                try {
+                    // do action if success
+                    loadWisata(s);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            //in this method we are fetching the json string
+            @Override
+            protected String doInBackground(Void... voids) {
+                try {
+                    //creating a URL
+                    URL url = new URL(urlWebService);
+
+                    //Opening the URL using HttpURLConnection
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                    //StringBuilder object to read the string from the service
+                    StringBuilder sb = new StringBuilder();
+
+                    //We will use a buffered reader to read the string from service
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                    //A simple string to read values from each line
+                    String json;
+
+                    //reading until we don't find null
+                    while ((json = bufferedReader.readLine()) != null) {
+
+                        //appending it to string builder
+                        sb.append(json + "\n");
+                    }
+
+                    //finally returning the read string
+                    return sb.toString().trim();
+                } catch (Exception e) {
+                    return null;
+                }
+
+            }
+        }
+
+        //creating asynctask object and executing it
+        GetJSON getJSON = new GetJSON();
+        getJSON.execute();
+    }
+
+    private void loadWisata(String json) throws JSONException {
+        //creating a json array from the json string
+        JSONArray jsonArray = new JSONArray(json);
+
+        //looping through all the elements in json array
+        for (int i = 0; i < jsonArray.length(); i++) {
+
+            //getting json object from the json array
+            JSONObject obj = jsonArray.getJSONObject(i);
+
+            nama_wisata.setText(obj.getString("nama_wisata"));
+            deskripsi_wisata.setText(obj.getString("ket_wisata"));
+            lokasi_wisata.setText(obj.getString("nama_kabupaten"));
+            setTitle(obj.getString("nama_wisata"));
+        }
     }
 }

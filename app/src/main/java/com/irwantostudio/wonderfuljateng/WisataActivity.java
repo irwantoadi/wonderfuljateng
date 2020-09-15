@@ -35,7 +35,6 @@ import java.util.List;
 
 public class WisataActivity extends AppCompatActivity {
     ListView listView;
-    String countryList[] = {"China", "australia", "Portugle", "America"};
     private HashMap<String, String> item;
     private AdView mAdView;
     ImageView imageView;
@@ -111,8 +110,9 @@ public class WisataActivity extends AppCompatActivity {
         //creating a string array for listview
         String[] nama_wisata = new String[jsonArray.length()];
         String[] deskripsi_wisata = new String[jsonArray.length()];
+        final String[] id_wisata = new String[jsonArray.length()];
 
-        ArrayList<HashMap<String, String>> wordList;
+        final ArrayList<HashMap<String, String>> wordList;
         wordList = new ArrayList<HashMap<String, String>>();
 
         //looping through all the elements in json array
@@ -129,6 +129,8 @@ public class WisataActivity extends AppCompatActivity {
             item.put( "line1", obj.getString("nama_wisata"));
             item.put( "line2", obj.getString("ket_wisata").substring(0, 40)+"....");
             item.put( "line3", obj.getString("nama_kabupaten"));
+            item.put( "line4", obj.getString("id_wisata"));
+            id_wisata[i] = obj.getString("id_wisata");
             wordList.add( item );
         }
 
@@ -136,11 +138,8 @@ public class WisataActivity extends AppCompatActivity {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.list_wisata_row, R.id.nama_wisata, nama_wisata);
         SimpleAdapter arrayAdapter1 = new SimpleAdapter(this, wordList,
                 R.layout.list_wisata_row,
-                new String[] { "line1","line2", "line3" },
-                new int[] {R.id.nama_wisata, R.id.deskripsi_wisata, R.id.lokasi_wisata});
-
-        //attaching adapter to listview
-//        listView.setAdapter(arrayAdapter);
+                new String[] { "line1","line2", "line3", "line4" },
+                new int[] {R.id.nama_wisata, R.id.deskripsi_wisata, R.id.lokasi_wisata, R.id.id_wisata});
 
         listView.setAdapter(arrayAdapter1);
         listView.setDivider(null);
@@ -148,8 +147,11 @@ public class WisataActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getApplicationContext(),ShowWisataActivity.class);
-                intent.putExtra("name","wisata");
+                intent.putExtra("id_wisata",id_wisata[i]);
                 startActivity(intent);
+//                Toast.makeText(WisataActivity.this,
+//                     id_wisata[i],
+//                     Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -193,9 +195,6 @@ public class WisataActivity extends AppCompatActivity {
             //in this method we are fetching the json string
             @Override
             protected String doInBackground(Void... voids) {
-
-
-
                 try {
                     //creating a URL
                     URL url = new URL(urlWebService);

@@ -130,6 +130,7 @@ public class WisataActivity extends AppCompatActivity {
             item.put( "line2", obj.getString("ket_wisata").substring(0, 40)+"....");
             item.put( "line3", obj.getString("nama_kabupaten"));
             item.put( "line4", obj.getString("id_wisata"));
+            item.put( "line5", obj.getString("url_image"));
             id_wisata[i] = obj.getString("id_wisata");
             wordList.add( item );
         }

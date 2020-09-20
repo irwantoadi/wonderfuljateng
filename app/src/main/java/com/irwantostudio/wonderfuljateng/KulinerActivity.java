@@ -31,7 +31,6 @@ import java.util.HashMap;
 
 public class KulinerActivity extends AppCompatActivity {
     ListView listView;
-    String countryList[] = {"China", "australia", "Portugle", "America"};
     private HashMap<String, String> item;
     private AdView mAdView;
 
@@ -39,6 +38,8 @@ public class KulinerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kuliner);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         listView = (ListView) findViewById(R.id.list_view);
         getJSON("https://sipetik.com/server/select_kuliner.php");
@@ -97,10 +98,8 @@ public class KulinerActivity extends AppCompatActivity {
     private void loadIntoListView(String json) throws JSONException {
         //creating a json array from the json string
         JSONArray jsonArray = new JSONArray(json);
+        final String[] id_kuliner = new String[jsonArray.length()];
 
-        //creating a string array for listview
-        String[] nama_kuliner = new String[jsonArray.length()];
-        String[] deskripsi_kuliner = new String[jsonArray.length()];
 
         ArrayList<HashMap<String, String>> wordList;
         wordList = new ArrayList<HashMap<String, String>>();
@@ -110,7 +109,6 @@ public class KulinerActivity extends AppCompatActivity {
 
             //getting json object from the json array
             JSONObject obj = jsonArray.getJSONObject(i);
-
             //getting the name from the json object and putting it inside string array
 //            nama_wisata[i] = obj.getString("nama_wisata");
 //            deskripsi_wisata[i] = obj.getString("ket_wisata").substring(0, 48);
@@ -119,6 +117,9 @@ public class KulinerActivity extends AppCompatActivity {
             item.put( "line1", obj.getString("nama_kuliner"));
             item.put( "line2", obj.getString("ket_kuliner").substring(0, 40)+"....");
             item.put( "line3", obj.getString("nama_kabupaten"));
+            item.put( "line4", obj.getString("id_kuliner"));
+            item.put( "line5", obj.getString("url_image"));
+            id_kuliner[i] = obj.getString("id_kuliner");
             wordList.add( item );
         }
 
@@ -139,7 +140,7 @@ public class KulinerActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getApplicationContext(),ShowKulinerActivity.class);
-                intent.putExtra("name","wisata");
+                intent.putExtra("id_kuliner",id_kuliner[i]);
                 startActivity(intent);
             }
         });

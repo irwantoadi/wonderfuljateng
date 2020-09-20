@@ -40,8 +40,6 @@ import java.util.List;
 public class ShowWisataActivity extends AppCompatActivity {
 
     private AdView mAdView;
-    private ImageView imageView;
-    private HashMap<String, String> item;
     private TextView nama_wisata, deskripsi_wisata, lokasi_wisata;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,24 +50,11 @@ public class ShowWisataActivity extends AppCompatActivity {
         deskripsi_wisata = findViewById(R.id.deskripsi_wisata);
         lokasi_wisata = findViewById(R.id.lokasi_wisata);
 
-
-//        imageView = findViewById(R.id.id_show_wisata);
-//        Picasso.get().load("https://sipetik.com/server/select_image_wisata.php?id=7").into(imageView);
-
         Intent intent= getIntent();
         Bundle data = intent.getExtras();
         String id_wisata =(String) data.get("id_wisata");
-        getJSON("https://sipetik.com/server/select_wisata.php?id="+id_wisata);
-
-        ImageSlider imageSlider = findViewById(R.id.image_show_wisata_slider);
-        List<SlideModel> slideModels = new ArrayList<>();
-
-//        Toast.makeText(ShowWisataActivity.this, id_wisata, Toast.LENGTH_LONG).show();
-
-        slideModels.add(new SlideModel(getString(R.string.url1), ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://blog.airyrooms.com/wp-content/uploads/2018/07/800X500-3.png", ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://tempatwisataseru.com/wp-content/uploads/2015/11/Dieng.jpg", ScaleTypes.FIT));
-        imageSlider.setImageList(slideModels, ScaleTypes.FIT);
+        getJSON("https://sipetik.com/server/select_wisata.php?id="+id_wisata, "string");
+        getJSON("https://sipetik.com/server/get_json_image_url.php?id="+id_wisata, "image");
 
         //script admob
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -122,7 +107,7 @@ public class ShowWisataActivity extends AppCompatActivity {
     }
 
     //this method is actually fetching the json string
-    private void getJSON(final String urlWebService) {
+    private void getJSON(final String urlWebService, final String typeURL) {
         /*
          * As fetching the json string is a network operation
          * And we cannot perform a network operation in main thread
@@ -151,7 +136,12 @@ public class ShowWisataActivity extends AppCompatActivity {
 //                Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
                 try {
                     // do action if success
-                    loadWisata(s);
+                    if(typeURL.equals("string")){
+                        loadWisata(s);
+                    }else{
+                        //if imgae url
+                        loadImagetoImageSlider(s);
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -195,6 +185,25 @@ public class ShowWisataActivity extends AppCompatActivity {
         //creating asynctask object and executing it
         GetJSON getJSON = new GetJSON();
         getJSON.execute();
+    }
+
+    private void loadImagetoImageSlider(String json) throws JSONException {
+        //creating a json array from the json string
+        JSONArray jsonArray = new JSONArray(json);
+
+        ImageSlider imageSlider = findViewById(R.id.image_show_wisata_slider);
+        List<SlideModel> slideModels = new ArrayList<>();
+
+        //looping through all the elements in json array
+        for (int i = 0; i < jsonArray.length(); i++) {
+
+            //getting json object from the json array
+            JSONObject obj = jsonArray.getJSONObject(i);
+
+            //add url image to slidemodels
+            slideModels.add(new SlideModel(obj.getString("url_image"), ScaleTypes.FIT));
+        }
+        imageSlider.setImageList(slideModels, ScaleTypes.FIT);
     }
 
     private void loadWisata(String json) throws JSONException {

@@ -11,30 +11,40 @@
         android:roundIcon="@drawable/icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShowKabupatenActivity"
-            android:parentActivityName=".KabupatenActivity"/>
-        <activity android:name=".ShowKulinerActivity"
-            android:parentActivityName=".KulinerActivity"/>
-        <activity android:name=".ShowWisataActivity"
-            android:parentActivityName=".WisataActivity"/>
-        <activity android:name=".KabupatenActivity"
+        <activity android:name=".WebActivity"></activity>
+        <activity
+            android:name=".ShowKabupatenActivity"
+            android:parentActivityName=".KabupatenActivity" />
+        <activity
+            android:name=".ShowKulinerActivity"
+            android:parentActivityName=".KulinerActivity" />
+        <activity
+            android:name=".ShowWisataActivity"
+            android:parentActivityName=".WisataActivity" />
+        <activity
+            android:name=".KabupatenActivity"
             android:label="Daftar Kabupaten"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".ProfilActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ProfilActivity"
             android:label="Profil Saya"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".KulinerActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".KulinerActivity"
             android:label="Kuliner"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".BudayaActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".BudayaActivity"
             android:label="Budaya"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".HotelActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".HotelActivity"
             android:label="Penginapan"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".UmkmActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".UmkmActivity"
             android:label="UMKM"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -49,6 +59,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

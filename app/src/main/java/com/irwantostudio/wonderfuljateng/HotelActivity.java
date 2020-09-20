@@ -1,8 +1,13 @@
 package com.irwantostudio.wonderfuljateng;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -14,10 +19,31 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 public class HotelActivity extends AppCompatActivity {
 
     private AdView mAdView;
+    private CardView cardView1, cardView2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel);
+
+        cardView1 = findViewById(R.id.card_view);
+        cardView2 = findViewById(R.id.card_view1);
+        cardView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.pegipegi.com/"));
+                startActivity(browserIntent);
+//                Toast.makeText(getApplicationContext(),"clicked1", Toast.LENGTH_SHORT).show();
+            }
+        });
+        cardView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.traveloka.com/ms-my/hotel"));
+                startActivity(browserIntent);
+//                Toast.makeText(getApplicationContext(),"clicked2", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         //script admob
         MobileAds.initialize(this, new OnInitializationCompleteListener() {

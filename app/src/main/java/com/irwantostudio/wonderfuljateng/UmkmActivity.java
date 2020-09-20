@@ -2,8 +2,11 @@ package com.irwantostudio.wonderfuljateng;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -93,8 +96,8 @@ public class UmkmActivity extends AppCompatActivity {
         JSONArray jsonArray = new JSONArray(json);
 
         //creating a string array for listview
-        String[] nama_kabupaten = new String[jsonArray.length()];
-        String[] link = new String[jsonArray.length()];
+        final String[] nama_kabupaten = new String[jsonArray.length()];
+        final String[] link = new String[jsonArray.length()];
 
         ArrayList<HashMap<String, String>> wordList;
         wordList = new ArrayList<HashMap<String, String>>();
@@ -112,6 +115,8 @@ public class UmkmActivity extends AppCompatActivity {
             item = new HashMap<String,String>();
             item.put( "line1", obj.getString("nama_kabupaten"));
             item.put( "line2", obj.getString("link"));
+            link[i] = obj.getString("link");
+            nama_kabupaten[i] = obj.getString("nama_kabupaten");
             wordList.add( item );
         }
 
@@ -128,6 +133,18 @@ public class UmkmActivity extends AppCompatActivity {
         listView.setAdapter(arrayAdapter1);
         listView.setDivider(null);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getApplicationContext(),WebActivity.class);
+                intent.putExtra("url",link[i]);
+                intent.putExtra("title","UMKM "+nama_kabupaten[i]);
+                startActivity(intent);
+//                Toast.makeText(getApplicationContext(),
+//                     link[i],
+//                     Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     //this method is actually fetching the json string

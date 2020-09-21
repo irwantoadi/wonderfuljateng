@@ -17,12 +17,16 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.irwantostudio.wonderfuljateng.mData.DataKuliner;
+import com.irwantostudio.wonderfuljateng.mData.DataKulinerCollection;
+import com.irwantostudio.wonderfuljateng.mListView.CustomAdapterKuliner;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -33,6 +37,7 @@ public class KulinerActivity extends AppCompatActivity {
     ListView listView;
     private HashMap<String, String> item;
     private AdView mAdView;
+    CustomAdapterKuliner adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +47,11 @@ public class KulinerActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
 
         listView = (ListView) findViewById(R.id.list_view);
+
         getJSON("https://sipetik.com/server/select_kuliner.php");
 
 //        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.list_wisata_row, R.id.nama_wisata, countryList);
-//        listView.setAdapter(arrayAdapter);
+
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
@@ -104,36 +110,57 @@ public class KulinerActivity extends AppCompatActivity {
         ArrayList<HashMap<String, String>> wordList;
         wordList = new ArrayList<HashMap<String, String>>();
 
+        ArrayList<DataKuliner> dataKuliner=new ArrayList<>();
+
         //looping through all the elements in json array
         for (int i = 0; i < jsonArray.length(); i++) {
 
+            DataKuliner data=new DataKuliner();
             //getting json object from the json array
             JSONObject obj = jsonArray.getJSONObject(i);
             //getting the name from the json object and putting it inside string array
-//            nama_wisata[i] = obj.getString("nama_wisata");
-//            deskripsi_wisata[i] = obj.getString("ket_wisata").substring(0, 48);
 
-            item = new HashMap<String,String>();
-            item.put( "line1", obj.getString("nama_kuliner"));
-            item.put( "line2", obj.getString("ket_kuliner").substring(0, 40)+"....");
-            item.put( "line3", obj.getString("nama_kabupaten"));
-            item.put( "line4", obj.getString("id_kuliner"));
-            item.put( "line5", obj.getString("url_image"));
+            data.setNamaKuliner(obj.getString("nama_kuliner"));
+            data.setDeskripsiKuliner(obj.getString("ket_kuliner").substring(0, 40)+"....");
+            data.setNamaKabupaten(obj.getString("nama_kabupaten"));
+            data.setUrlImage("");
             id_kuliner[i] = obj.getString("id_kuliner");
-            wordList.add( item );
+            dataKuliner.add(data);
         }
+
+//        return dataKuliner;
+
+        //looping through all the elements in json array
+//        for (int i = 0; i < jsonArray.length(); i++) {
+//
+//            //getting json object from the json array
+//            JSONObject obj = jsonArray.getJSONObject(i);
+//            //getting the name from the json object and putting it inside string array
+////            nama_wisata[i] = obj.getString("nama_wisata");
+////            deskripsi_wisata[i] = obj.getString("ket_wisata").substring(0, 48);
+//
+//            item = new HashMap<String,String>();
+//            item.put( "line1", obj.getString("nama_kuliner"));
+//            item.put( "line2", obj.getString("ket_kuliner").substring(0, 40)+"....");
+//            item.put( "line3", obj.getString("nama_kabupaten"));
+//            item.put( "line4", obj.getString("id_kuliner"));
+//            item.put( "line5", obj.getString("url_image"));
+//            id_kuliner[i] = obj.getString("id_kuliner");
+//            wordList.add( item );
+//        }
 
         //the array adapter to load data into list
 //        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.list_wisata_row, R.id.nama_wisata, nama_wisata);
-        SimpleAdapter arrayAdapter1 = new SimpleAdapter(this, wordList,
-                R.layout.list_kuliner_row,
-                new String[] { "line1","line2", "line3"},
-                new int[] {R.id.nama_kuliner, R.id.deskripsi_kuliner, R.id.lokasi_kuliner});
+//        SimpleAdapter arrayAdapter1 = new SimpleAdapter(this, wordList,
+//                R.layout.list_kuliner_row,
+//                new String[] { "line1","line2", "line3"},
+//                new int[] {R.id.nama_kuliner, R.id.deskripsi_kuliner, R.id.lokasi_kuliner});
 
         //attaching adapter to listview
 //        listView.setAdapter(arrayAdapter);
 
-        listView.setAdapter(arrayAdapter1);
+        adapter=new CustomAdapterKuliner(this, dataKuliner);
+        listView.setAdapter(adapter);
         listView.setDivider(null);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -215,7 +242,6 @@ public class KulinerActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     return null;
                 }
-
             }
         }
 

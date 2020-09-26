@@ -123,7 +123,7 @@ public class KulinerActivity extends AppCompatActivity {
             data.setNamaKuliner(obj.getString("nama_kuliner"));
             data.setDeskripsiKuliner(obj.getString("ket_kuliner").substring(0, 40)+"....");
             data.setNamaKabupaten(obj.getString("nama_kabupaten"));
-            data.setUrlImage("");
+            data.setUrlImage(obj.getString("url_image"));
             id_kuliner[i] = obj.getString("id_kuliner");
             dataKuliner.add(data);
         }
@@ -157,7 +157,7 @@ public class KulinerActivity extends AppCompatActivity {
 //                new int[] {R.id.nama_kuliner, R.id.deskripsi_kuliner, R.id.lokasi_kuliner});
 
         //attaching adapter to listview
-//        listView.setAdapter(arrayAdapter);
+//        listView.setAdapter(arrayAdapter1);
 
         adapter=new CustomAdapterKuliner(this, dataKuliner);
         listView.setAdapter(adapter);

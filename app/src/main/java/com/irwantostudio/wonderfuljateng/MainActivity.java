@@ -225,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_akun) {// Do whatever you want to do on click.
+        if (item.getItemId() == R.id.menu_profil) {// Do whatever you want to do on click.
             return true;
         }
         return super.onOptionsItemSelected(item);

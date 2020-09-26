@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import com.irwantostudio.wonderfuljateng.R;
 import com.irwantostudio.wonderfuljateng.mData.DataKuliner;
 import com.irwantostudio.wonderfuljateng.mPicasso.PicassoClient;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -60,6 +61,7 @@ public class CustomAdapterKuliner extends BaseAdapter {
         holder.deskripsi_kuliner.setText(dataKuliner.get(position).getDeskripsiKuliner());
         holder.lokasi_kuliner.setText(dataKuliner.get(position).getNamaKabupaten());
 //        PicassoClient.downloadImage(c,dataKuliner.get(position).getUrlImage(),holder.img_kuliner);
+        Picasso.get().load(dataKuliner.get(position).getUrlImage()).into(holder.img_kuliner);
 
         return convertView;
     }

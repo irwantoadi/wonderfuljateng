@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.irwantostudio.wonderfuljateng.R;
-import com.irwantostudio.wonderfuljateng.mData.DataKuliner;
+import com.irwantostudio.wonderfuljateng.mData.DataWisata;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -15,25 +15,25 @@ import java.util.ArrayList;
 /**
  * Created by Oclemmy on 4/25/2016 for ProgrammingWizards Channel.
  */
-public class CustomAdapterKuliner extends BaseAdapter {
+public class CustomAdapterWisata extends BaseAdapter {
 
     Context c;
-    ArrayList<DataKuliner> dataKuliner;
+    ArrayList<DataWisata> dataWisata;
     LayoutInflater inflater;
 
-    public CustomAdapterKuliner(Context c, ArrayList<DataKuliner> dataKuliner) {
+    public CustomAdapterWisata(Context c, ArrayList<DataWisata> dataWisata) {
         this.c = c;
-        this.dataKuliner = dataKuliner;
+        this.dataWisata = dataWisata;
     }
 
     @Override
     public int getCount() {
-        return dataKuliner.size();
+        return dataWisata.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return dataKuliner.get(position);
+        return dataWisata.get(position);
     }
 
     @Override
@@ -50,17 +50,17 @@ public class CustomAdapterKuliner extends BaseAdapter {
 
         if(convertView==null)
         {
-            convertView=inflater.inflate(R.layout.list_kuliner_row,parent,false);
+            convertView=inflater.inflate(R.layout.list_wisata_row,parent,false);
 
         }
 
         //BIND DATA
-        MyHolderKuliner holder=new MyHolderKuliner(convertView);
-        holder.nama_kuliner.setText(dataKuliner.get(position).getNamaKuliner());
-        holder.deskripsi_kuliner.setText(dataKuliner.get(position).getDeskripsiKuliner());
-        holder.lokasi_kuliner.setText(dataKuliner.get(position).getNamaKabupaten());
+        MyHolderWisata holder=new MyHolderWisata(convertView);
+        holder.nama_wisata.setText(dataWisata.get(position).getNamaWisata());
+        holder.deskripsi_wisata.setText(dataWisata.get(position).getDeskripsiWisata());
+        holder.lokasi_wisata.setText(dataWisata.get(position).getNamaKabupaten());
 //        PicassoClient.downloadImage(c,dataKuliner.get(position).getUrlImage(),holder.img_kuliner);
-        Picasso.get().load(dataKuliner.get(position).getUrlImage()).into(holder.img_kuliner);
+        Picasso.get().load(dataWisata.get(position).getUrlImage()).into(holder.img_wisata);
 
         return convertView;
     }

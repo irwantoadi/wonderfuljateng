@@ -1,17 +1,14 @@
 package com.irwantostudio.wonderfuljateng;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -19,7 +16,8 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.squareup.picasso.Picasso;
+import com.irwantostudio.wonderfuljateng.mData.DataWisata;
+import com.irwantostudio.wonderfuljateng.mListView.CustomAdapterWisata;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,13 +29,13 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class WisataActivity extends AppCompatActivity {
     ListView listView;
     private HashMap<String, String> item;
     private AdView mAdView;
     ImageView imageView;
+    CustomAdapterWisata adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,41 +106,56 @@ public class WisataActivity extends AppCompatActivity {
         JSONArray jsonArray = new JSONArray(json);
 
         //creating a string array for listview
-        String[] nama_wisata = new String[jsonArray.length()];
-        String[] deskripsi_wisata = new String[jsonArray.length()];
         final String[] id_wisata = new String[jsonArray.length()];
 
         final ArrayList<HashMap<String, String>> wordList;
         wordList = new ArrayList<HashMap<String, String>>();
 
+        ArrayList<DataWisata> dataWisata=new ArrayList<>();
+
         //looping through all the elements in json array
+//        for (int i = 0; i < jsonArray.length(); i++) {
+//
+//            //getting json object from the json array
+//            JSONObject obj = jsonArray.getJSONObject(i);
+//
+//            //getting the name from the json object and putting it inside string array
+//            item = new HashMap<String,String>();
+//            item.put( "line1", obj.getString("nama_wisata"));
+//            item.put( "line2", obj.getString("ket_wisata").substring(0, 40)+"....");
+//            item.put( "line3", obj.getString("nama_kabupaten"));
+//            item.put( "line4", obj.getString("id_wisata"));
+//            item.put( "line5", obj.getString("url_image"));
+//            id_wisata[i] = obj.getString("id_wisata");
+//            wordList.add( item );
+//        }
         for (int i = 0; i < jsonArray.length(); i++) {
 
+            DataWisata data=new DataWisata();
             //getting json object from the json array
             JSONObject obj = jsonArray.getJSONObject(i);
-
             //getting the name from the json object and putting it inside string array
-            nama_wisata[i] = obj.getString("nama_wisata");
-            deskripsi_wisata[i] = obj.getString("ket_wisata").substring(0, 48);
 
-            item = new HashMap<String,String>();
-            item.put( "line1", obj.getString("nama_wisata"));
-            item.put( "line2", obj.getString("ket_wisata").substring(0, 40)+"....");
-            item.put( "line3", obj.getString("nama_kabupaten"));
-            item.put( "line4", obj.getString("id_wisata"));
-            item.put( "line5", obj.getString("url_image"));
+            data.setNamaWisata(obj.getString("nama_wisata"));
+            data.setDeskripsiWisata(obj.getString("ket_wisata").substring(0, 40)+"....");
+            data.setNamaKabupaten(obj.getString("nama_kabupaten"));
+            data.setUrlImage(obj.getString("url_image"));
             id_wisata[i] = obj.getString("id_wisata");
-            wordList.add( item );
+            dataWisata.add(data);
         }
 
         //the array adapter to load data into list
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.list_wisata_row, R.id.nama_wisata, nama_wisata);
-        SimpleAdapter arrayAdapter1 = new SimpleAdapter(this, wordList,
-                R.layout.list_wisata_row,
-                new String[] { "line1","line2", "line3", "line4" },
-                new int[] {R.id.nama_wisata, R.id.deskripsi_wisata, R.id.lokasi_wisata, R.id.id_wisata});
+//        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.list_wisata_row, R.id.nama_wisata, nama_wisata);
+//        SimpleAdapter arrayAdapter1 = new SimpleAdapter(this, wordList,
+//                R.layout.list_wisata_row,
+//                new String[] { "line1","line2", "line3", "line4" },
+//                new int[] {R.id.nama_wisata, R.id.deskripsi_wisata, R.id.lokasi_wisata, R.id.id_wisata});
+//
+//        listView.setAdapter(arrayAdapter1);
 
-        listView.setAdapter(arrayAdapter1);
+
+        adapter=new CustomAdapterWisata(this, dataWisata);
+        listView.setAdapter(adapter);
         listView.setDivider(null);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

@@ -7,9 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -18,7 +16,6 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.irwantostudio.wonderfuljateng.mData.DataKuliner;
-import com.irwantostudio.wonderfuljateng.mData.DataKulinerCollection;
 import com.irwantostudio.wonderfuljateng.mListView.CustomAdapterKuliner;
 
 import org.json.JSONArray;
@@ -26,7 +23,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;

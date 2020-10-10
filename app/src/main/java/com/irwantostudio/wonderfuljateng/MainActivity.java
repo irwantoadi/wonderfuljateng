@@ -226,6 +226,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.menu_profil) {// Do whatever you want to do on click.
+            Intent intent = new Intent(MainActivity.this, ProfilActivity.class);
+            startActivity(intent);
+            return true;
+        }else if (item.getItemId() == R.id.menu_tentang){
+            Intent intent = new Intent(MainActivity.this, TentangActivity.class);
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);

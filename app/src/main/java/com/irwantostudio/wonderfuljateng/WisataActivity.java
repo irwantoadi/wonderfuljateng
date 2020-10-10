@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -36,6 +37,7 @@ public class WisataActivity extends AppCompatActivity {
     private AdView mAdView;
     ImageView imageView;
     CustomAdapterWisata adapter;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class WisataActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
+        progressBar = findViewById(R.id.progressbar);
         listView = (ListView) findViewById(R.id.list_view);
         getJSON("https://sipetik.com/server/select_wisata.php");
 
@@ -168,6 +171,8 @@ public class WisataActivity extends AppCompatActivity {
 //                     Toast.LENGTH_LONG).show();
             }
         });
+
+        progressBar.setVisibility(View.GONE);
     }
 
 

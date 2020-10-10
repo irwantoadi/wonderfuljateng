@@ -83,7 +83,7 @@
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimaryDark"
-                        android:text="Soto Krandegan"/>
+                        android:text="@string/loading"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -93,8 +93,7 @@
                         android:id="@+id/deskripsi_kuliner"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Makanan khas Banjarnegara pertama dengan citarasa juara yaitu Soto Krandegan. Perpaduan kuah santan, irisan tauge, ketupat, dan potongan sapi di Soto Krandegan ini sangat cocok dijadikan menu sarapanmu di pagi hari. Untuk mencari tempat penjual Soto Krandegan pun tidak terlalu sulit di Banjarnegara, datang saja ke Alun-Alun kota, kamu akan menemukan banyak pedagang yang menjual Soto Krandegan dengan rasa yang lezat."/>
-
+                        android:text="@string/loading"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -112,7 +111,7 @@
                         android:id="@+id/lokasi_kuliner"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Kabupaten Banjarnegara"
+                        android:text="@string/loading"
                         android:textStyle="bold" />
 
                 </LinearLayout>

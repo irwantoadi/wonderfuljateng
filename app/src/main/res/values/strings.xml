@@ -30,4 +30,5 @@
     <string name="pilih_salah_satu_layanan_penginapan">Pilih salah satu layanan penginapan :</string>
     <string name="https_www_traveloka_com_ms_my_hotel">https://www.traveloka.com/ms-my/hotel</string>
     <string name="https_www_pegipegi_com">https://www.pegipegi.com/</string>
+    <string name="loading">Loading...</string>
 </resources>

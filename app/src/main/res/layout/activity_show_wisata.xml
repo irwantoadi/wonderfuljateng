@@ -89,7 +89,7 @@
                                 android:textSize="18sp"
                                 android:textStyle="bold"
                                 android:textColor="@color/colorPrimaryDark"
-                                android:text="Curug Pitu Banjarnegara"/>
+                                android:text="@string/loading"/>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -99,7 +99,7 @@
                                 android:id="@+id/deskripsi_wisata"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Curug Pitu merupakan salah satu tempat wisata menarik di Banjarnegara yang banyak dikunjungi para wisatawan. Curug Pitu berada di Desa Sigaluh, Kecamatan Sigaluh, Kabupaten Banjarnegara. Seperti yang kita tau dari namanya Curug Sewu yang artinya Air Terjun Tujuh. Curug ini memiliki tujuh tingkatan. Wisatawan dapat melewati tujuh tingkatan dengan menggunakan tangga yang sudah disediakan oleh pengelola disana."/>
+                                android:text="@string/loading"/>
 
                         </LinearLayout>
 
@@ -117,7 +117,7 @@
                                 android:id="@+id/lokasi_wisata"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Kabupaten Banjarnegara"
+                                android:text="@string/loading"
                                 android:textStyle="bold" />
 
                         </LinearLayout>

@@ -57,7 +57,49 @@
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
                         android:textColor="#000"
-                        android:text="@string/nama"/>
+                        android:text="Wonderful Jateng adalah aplikasi informasi wisata di Jawa Tengah, Indonesia."/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#000"
+                        android:text=""/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#000"
+                        android:text="Fitur :"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#000"
+                        android:text="~ Informasi wisata setiap babupaten di Jawa Tengah."/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#000"
+                        android:text="~ Informasi kuliner khas setiap kabupaten di Jawa Tengah."/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#000"
+                        android:text="~ Informasi penginapan."/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#000"
+                        android:text="~ Informasi UMKM di Jawa Tengah."/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#000"
+                        android:text="~ Informasi Budaya di Jawa Tengah."/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -149,7 +191,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginTop="-460dp"
+            android:layout_marginTop="-550dp"
             android:adjustViewBounds="true"
             android:src="@drawable/icon_app" />
         <LinearLayout

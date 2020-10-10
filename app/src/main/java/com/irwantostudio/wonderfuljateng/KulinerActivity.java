@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -34,6 +35,7 @@ public class KulinerActivity extends AppCompatActivity {
     private HashMap<String, String> item;
     private AdView mAdView;
     CustomAdapterKuliner adapter;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,7 @@ public class KulinerActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
+        progressBar = findViewById(R.id.progressbar);
         listView = (ListView) findViewById(R.id.list_view);
 
         getJSON("https://sipetik.com/server/select_kuliner.php");
@@ -167,6 +170,8 @@ public class KulinerActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        progressBar.setVisibility(View.GONE);
     }
 
     //this method is actually fetching the json string

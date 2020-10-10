@@ -3,6 +3,7 @@ package com.irwantostudio.wonderfuljateng;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -135,13 +136,16 @@ public class BudayaActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getApplicationContext(),WebActivity.class);
-                intent.putExtra("url",link[i]);
-                intent.putExtra("title","Budaya "+nama_kabupaten[i]);
-                startActivity(intent);
+//                Intent intent = new Intent(getApplicationContext(),WebActivity.class);
+//                intent.putExtra("url",link[i]);
+//                intent.putExtra("title","Budaya "+nama_kabupaten[i]);
+//                startActivity(intent);
 //                Toast.makeText(getApplicationContext(),
 //                     link[i],
 //                     Toast.LENGTH_LONG).show();
+
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(link[i]));
+                startActivity(browserIntent);
             }
         });
     }

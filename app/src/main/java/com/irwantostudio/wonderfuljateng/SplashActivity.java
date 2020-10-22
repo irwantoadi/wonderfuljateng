@@ -48,7 +48,7 @@ public class SplashActivity extends AppCompatActivity {
 //                }else{
 
                     //setelah loading maka akan langsung berpindah ke login activity
-                    Intent home = new Intent(SplashActivity.this, LoginActivity.class);
+                    Intent home = new Intent(SplashActivity.this, AdminActivity.class);
                     startActivity(home);
                     finish();
 //                }

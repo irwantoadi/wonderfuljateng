@@ -12,8 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AdminActivity"
-            android:label="Dashboard Admin"/>
+        <activity android:name=".AdminShowTableActivity"></activity>
+        <activity
+            android:name=".AdminActivity"
+            android:label="Dashboard Admin" />
         <activity
             android:name=".TentangActivity"
             android:label="Tentang Aplikasi"

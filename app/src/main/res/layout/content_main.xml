@@ -261,6 +261,17 @@
 <!--            android:scaleType="fitCenter"-->
 <!--            android:contentDescription="@string/_" />-->
 <!--    </LinearLayout>-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cari berdasarkan Kabupaten :"
+            android:layout_marginLeft="16dp"
+            android:textStyle="bold"/>
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+            <include layout="@layout/layout_wisata_list" />
+        </HorizontalScrollView>
     </LinearLayout>
 </ScrollView>
 
